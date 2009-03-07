@@ -1,0 +1,53 @@
+h1. Thumbalizr PHP class
+
+A PHP class used for accessing thumbalizr's API and cache images locally. Originally written by the people behind thumbalizr, tweaked by me (Anton Lindqvist).
+
+Note that cache folder need to be writable (i.e chmod 777 cache/). Following options below are available.
+
+* *api_key* string
+** *info*: your unique api-key
+** *default*: n/a
+
+* *service_url* string
+** *info*: don't change, if you didn't have a special service contract
+** *default*: http://api.thumbalizr.com/
+
+* *use_local_cache* boolean
+** *info*: either true or false for local image cache
+** *default*: true
+
+* *local_cache_dir* string
+** *info*: relative cache directory must exists in install directory and be writable
+** *default*: cache
+
+* *local_cache_expire* int
+** *info*: local chache expiration time in hours
+** *default*: 12
+
+* *width* int
+** *info*: image width
+** *default*: 250
+
+* *delay* int
+** *info*: capture delay useful for flash content 5-10 is a good value
+** *default*: 8
+
+* *encoding* string
+** *info*: either jpg or png
+** *default*: png
+
+* *quality* int
+** *info*: image quality 10-90
+** *default*: 90
+
+* *bwidth* int
+** *info*: browser width
+** *default*: 1280
+
+* *bheight* int
+** *info*: browser height
+** *default*: 1024
+
+* *mode* string
+** *info*: screen or page
+** *default*: screen
