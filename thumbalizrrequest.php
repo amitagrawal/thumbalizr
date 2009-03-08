@@ -45,7 +45,7 @@ class thumbalizrRequest {
 		$this->build_request($url);
 		
 		if(file_exists($this->local_cache_file)) {
-			$cachetime = time() - filemtime($thos->local_cache_file) - ($this->config['local_cache_expire'] * 60 * 60);
+			$cachetime = time() - filemtime($this->local_cache_file) - ($this->config['local_cache_expire'] * 60 * 60);
 		} else {
 			$cachetime = -1;
 		}
