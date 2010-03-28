@@ -15,7 +15,7 @@ class thumbalizrRequest {
 			'service_url' => (!$config['service_url']) ? 'http://api.thumbalizr.com/' : $config['service_url'],
 			'use_local_cache' => (!$config['use_local_cache']) ? true : $config['use_local_cache'],
 			'local_cache_dir' => (!$config['local_cache_dir']) ? 'cache' : $config['local_cache_dir'],
-			'local_cache_expire' => (!$config['local_cache_expire']) ? 8 : $config['local_cache_expire'],
+			'local_cache_expire' => (!$config['local_cache_expire']) ? 300 : $config['local_cache_expire'],
 			// Equivalent to $thumbalizr_defaults.
 			'width' => (!$config['width']) ? 250 : $config['width'],
 			'delay' => (!$config['delay']) ? 8 : $config['delay'],
@@ -45,7 +45,7 @@ class thumbalizrRequest {
 		$this->build_request($url);
 		
 		if(file_exists($this->local_cache_file)) {
-			$cachetime = time() - filemtime($this->local_cache_file) - ($this->config['local_cache_expire'] * 60 * 60);
+			$cachetime = time() - filemtime($this->local_cache_file) - $this->config['local_cache_expire'];
 		} else {
 			$cachetime = -1;
 		}
