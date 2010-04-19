@@ -1,7 +1,4 @@
 <?
-if(!defined('_THUMBALIZR'))
-	die('no access');
-
 class thumbalizrRequest {
 	public $config;
 	
